@@ -2,12 +2,23 @@ import sys
 from ceasar_cipher import ceasarDecrypt, ceasarEncrypt
 
 def main():
+    modes = {
+            "-e": "encrypt",
+            "-d": "decrypt",
+            "-b": "brute force"
+            }
+
+    mode = ""
     try:
         mode = sys.argv[1]
-        if mode not in ["-d", "-e"]:
-            print("Choose mode.\nFlags:\n-e to encrypt\n-d to decrypt")
+        if mode not in modes.keys():
+            print("Choose mode.\nFlags:")
+            for key, value in modes.items():
+                print(key + " to " + value)
     except IndexError:
-        print("Choose mode.\nFlags:\n-e to encrypt\n-d to decrypt")
+            print("Choose mode.\nFlags:")
+            for key, value in modes.items():
+                print(key + " to " + value)
 
     match mode:
 
@@ -36,6 +47,15 @@ def main():
 
             decText = ceasarDecrypt(inString, properKey)
             print(decText)
+
+        case "-b":
+            inString = input("Enter the text to decrypt: ")
+
+            for i in range(26):
+                decCandidate = ceasarDecrypt(inString, i)
+                print(str(i) + ": " + decCandidate)
+
+    return
 
 
 main()
