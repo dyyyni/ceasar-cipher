@@ -1,4 +1,4 @@
-def ceasarEncrypt(inString: str, key: int):
+def ceasarEncrypt(inString: str, key: int) -> str:
     encString = ""
     for char in inString:
         if char.isalpha():
@@ -8,7 +8,7 @@ def ceasarEncrypt(inString: str, key: int):
             encString += char
     return encString
 
-def ceasarDecrypt(inString: str, key: int):
+def ceasarDecrypt(inString: str, key: int) -> str:
     decString = ""
     for char in inString:
         if char.isalpha():
