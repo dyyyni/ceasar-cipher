@@ -45,7 +45,7 @@ def main():
                 except ValueError:
                     print("Enter the key as a number.")
 
-            decText = ceasarDecrypt(inString, properKey)
+            decText = ceasarDecrypt(inString, inKey)
             print(decText)
 
         case "-b":
