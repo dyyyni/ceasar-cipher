@@ -22,6 +22,14 @@ To brute force the decryption
 
 ```python3 main.py -b```
 
+To double encrypt
+
+```python3 main.py -de```
+
+To double decrypt
+
+```python3 main.py -dd```
+
 You can also feed in text files like this:
 
 ```python3 main.py -b < crypt.txt```
